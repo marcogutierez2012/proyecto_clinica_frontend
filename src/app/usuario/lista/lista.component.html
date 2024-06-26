@@ -1,0 +1,43 @@
+<div style="border: 2px red solid;" class="container">
+    <h2>Lista de Usuarios</h2>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Usuario</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>DNI</th>
+                <th>Fecha de nacimiento</th>
+                <th>Genero</th>
+                <th>Direccion</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Rol</th>
+                <th colspan="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.usuario }}</td>
+                <td>{{ user.nombre }}</td>
+                <td>{{ user.apellido }}</td>
+                <td>{{ user.dni }}</td>
+                <td>{{ user.fechaNacimiento | date:'dd/MM/yyyy'}}</td>
+                <td>{{ user.genero }}</td>
+                <td>{{ user.direccion }}</td>
+                <td>{{ user.correo }}</td>
+                <td>{{ user.telefono }}</td>
+                <td>{{ user.rol.nombre }}</td>
+                <td>
+                    <a href="" class="btn btn-warning">Actualizar</a>
+                </td>
+                <td>
+                    <a href="" class="btn btn-danger" (click)="eliminarUsuario(user.id)">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
